@@ -1,0 +1,24 @@
+{{titulo}}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Titulo</th>
+      <th scope="col">Conteúdo</th>
+      <th scope="col">Status</th>
+      <th scope="col">Data de Criacão</th>
+      <th scope="col">Categoria</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let topico of topicos">
+      <th scope="row"> {{topico.id}}</th>
+      <th >{{topico.titulo}}</th>
+      <td>{{topico.conteudo}}</td>
+      <td>{{topico.status}}</td>
+      <td>{{topico.dataCriacao}}</td>
+      <td>{{topico.categoria}}</td>
+    </tr>
+  </tbody>
+</table>

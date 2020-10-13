@@ -1,0 +1,46 @@
+<br>
+
+<div style="float: center" *ngIf="topicos">
+  <h2 style="text-align: center">Topicos da Base de Conhecimento</h2>
+</div>
+
+<div  (scrolled)="onScroll()">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Titulo</th>
+        <th scope="col">Conteudo</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Status</th>
+        <th scope="col">Data Criacao</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let topico of topicos">
+        <th scope="row"> {{topico.titulo}} </th>
+        <td>{{topico.conteudo}}</td>
+        <td>{{topico.categoria}}</td>
+        <td>{{topico.status}}</td>
+        <td>{{topico.dataCriacao}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="text-center text-muted" *ngIf="topicos.length === 0">
+    Não foi possível recuperar nenhum conteudo da base de dados!
+  </p>
+</div>
+
+<ng-template #modaFiltros>
+  <div class="modal-header">
+    <h3 class="modal-title pull-left">Filtros</h3>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()"><span
+        aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" >Filtrar</button>
+  </div>
+</ng-template>

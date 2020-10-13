@@ -1,0 +1,28 @@
+
+<nav class="navbar navbar-expand-lg navbar navbar-light bg-light mate-elevation-z5">
+  <a class="navbar-brand" href="#">
+         Base de Conhecimento
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" [routerLink]="['/consultar']" routerLinkActive="active" href="#">Consultar na Base de Conhecimento</a>
+      </li>
+      <li class="nav-item ">
+          <a class="nav-link "[routerLink]="['/inserir']" routerLinkActive="active" href="#">Inserir</a>
+      </li>
+      <li class="nav-item ">
+          <a class="nav-link " [routerLink]="['/editar']" routerLinkActive="active" href="#">Editar</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet>
+
+  </router-outlet>
+</div>

@@ -1,0 +1,37 @@
+<div class="form-group row">
+  <label for="inpuTitulo" class="col-sm-1 col-form-label">Titulo</label>
+  <div class="col-sm-6">
+    <input type="text" class="form-control" id="inpuTitulo" [(ngModel)]="filters.titulo"
+      placeholder="Digite o Título que deseja consultar">
+  </div>
+</div>
+<div class="form-group row">
+  <label for="inputCategoria" class="col-sm-1 col-form-label">Categoria</label>
+  <div class="col-sm-6">
+    <input type="text" class="form-control" id="inputCategoria" [(ngModel)]="filters.categoria"
+      onkeyup="this.value = this.value.toUpperCase();" placeholder="Digite a categoria que deseja consultar">
+  </div>
+  <br>
+  <hr>
+  <button type="button" class="btn btn-primary" (click)="applyFilters()" style="float: center">Consultar</button>
+</div>
+<br>
+<br>
+<div (scrolled)="onScroll()">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Titulo</th>
+        <th scope="col">Conteudo</th>
+        <th scope="col">Categoria</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let topico of topicos">
+        <th scope="row"> {{topico.titulo}} </th>
+        <td>{{topico.conteudo}}</td>
+        <td>{{topico.categoria}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
