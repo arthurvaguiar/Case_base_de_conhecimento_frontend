@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'listar', component: ListaTopicosComponent },
   { path: 'inserir', component: InserirTopicosComponent },
   { path: 'consultar', component: ConsultarTopicosComponent },
-  { path: 'editar', component: EditarTopicosComponent }
+  { path: 'editar/:id', component: EditarTopicosComponent }
 ];
 
 @NgModule({

@@ -1,3 +1,8 @@
+<span class="title-group">Olá, sou a sua Base de Conhecimento! </span>
+No que posso ajudar?
+<br>
+
+
 <div class="form-group row">
   <label for="inpuTitulo" class="col-sm-1 col-form-label">Titulo</label>
   <div class="col-sm-6">
@@ -24,6 +29,7 @@
         <th scope="col">Titulo</th>
         <th scope="col">Conteudo</th>
         <th scope="col">Categoria</th>
+        <th scope="col">Acao</th>
       </tr>
     </thead>
     <tbody>
@@ -31,7 +37,10 @@
         <th scope="row"> {{topico.titulo}} </th>
         <td>{{topico.conteudo}}</td>
         <td>{{topico.categoria}}</td>
+        <td><i class="fas fa-edit"></i> <a (click)="setEditar(topico.id)" class="edit"></a></td>
       </tr>
     </tbody>
   </table>
 </div>
+<div id="barraMin" style="height: 0px; overflow-x: auto;" ></div>
+

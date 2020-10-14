@@ -6,6 +6,7 @@ import { TopicoService } from './../topico.service';
 import { Component, OnInit } from '@angular/core';
 import { Topico } from '../topico.model';
 import { TERMOS } from 'src/app/termos/termos';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-consultar-topicos',
@@ -25,7 +26,8 @@ export class ConsultarTopicosComponent implements OnInit {
   constructor(
     private topicoService: TopicoService,
     private alertModalService: AlertModalService,
-    private spinner: NgxSpinnerService) { }
+    private spinner: NgxSpinnerService,
+    private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -43,7 +45,6 @@ export class ConsultarTopicosComponent implements OnInit {
 
   getByParameters() {
     this.spinner.show();
-
     this.topicoService.findByParameters( this.filters.titulo, this.filters.categoria).subscribe(
       response => {
 
@@ -54,6 +55,11 @@ export class ConsultarTopicosComponent implements OnInit {
         this.alertModalService.showAlertDanger(TERMOS.mensagem_falha_filtrar_topicos);
       }
     );
+  }
+
+  setEditar(id : string){
+    console.log(id);
+    this.router.navigate(['/editar/' + id]);
   }
 
 }

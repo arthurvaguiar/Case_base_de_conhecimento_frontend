@@ -3,6 +3,7 @@ import { Topico } from './topico.model';
 import { HttpClient, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
+import { Observable } from "rxjs";
 
 const sufix = 'topicos';
 
@@ -27,10 +28,11 @@ export class TopicoService {
     return this.http.get(urlPesquisa);
   }
 
-  findById(id) {
+  findById(id) : Observable<Topico> {
     return this.http.get<Topico>(API_CONFIG.baseUrl + sufix + `/${id}`);
   }
-  insert(topico: Topico) {
+
+  insert(topico: Topico) {''
     return this.http.post(API_CONFIG.baseUrl + sufix, topico, { observe: 'response', responseType: 'text' });
   }
 

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ConsultarTopicosComponent } from './topicos/consultar-topicos/consultar-topicos.component';
 
 const routes: Routes = [
-  {
-    path: '', pathMatch: 'full', redirectTo: 'topicos'
-  },
+  { path: '', component: ConsultarTopicosComponent },
+
   {
     path: 'topicos',
     loadChildren: ()=>import('src/app/topicos/topico.module').then(t =>t.TopicosModule)
