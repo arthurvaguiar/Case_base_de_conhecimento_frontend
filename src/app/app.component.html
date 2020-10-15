@@ -1,20 +1,19 @@
 
-<nav class="navbar navbar-expand-lg navbar navbar-light bg-light mate-elevation-z5">
+<nav class="navbar navbar-expand-lg navbar-dark" style="display:flexbox; padding: 1rem; box-sizing: content-box; " >
   <a class="navbar-brand" href="#">
-         Base de Conhecimento
+    Base de Conhecimento
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="nav nav-tabs">
-
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+      <ul class="nav justify-content-end ">
       <li class="nav-item ">
-          <a class="nav-link "[routerLink]="['/inserir']" routerLinkActive="active" href="#">Inserir</a>
+          <a class="nav-link active" style="display: flex; color: aliceblue;" href="#"[routerLink]="['/inserir']" routerLinkActive="active" >Inserir</a>
       </li>
       <li class="nav-item ">
-          <a class="nav-link " [routerLink]="['/editar']" routerLinkActive="active" href="#">Editar</a>
+          <a class="nav-link disabled" href="#" [routerLink]="['/editar']" routerLinkActive="active" >Editar</a>
       </li>
     </ul>
   </div>
@@ -24,3 +23,6 @@
 
   </router-outlet>
 </div>
+<nav class="navbar fixed-bottom  ">
+  <a  class="small" href="https://github.com/arthurvaguiar">Desenvolvido por Arthur Valentim</a>
+</nav>

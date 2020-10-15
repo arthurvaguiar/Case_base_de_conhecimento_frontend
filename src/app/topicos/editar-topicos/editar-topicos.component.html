@@ -1,20 +1,50 @@
+
+<br><br><br><br>
 <div>
-  <div>Alterar Topico</div>
+  <div class="home p-3 mb-2  text-dark">
+    <div class="title">
+      Altualização do tópico!
+    </div>
+  </div>
   <form *ngIf="topico">
-    <div>
-      <input type="text" placeholder="Titulo"  [(ngModel)]="topico.titulo" name="tiutlo" />
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Titulo</span>
+      </div>
+      <input type="text" class="form-control" placeholder="Titulo" name="tiutlo" aria-label="Titulo"
+        [(ngModel)]="topico.titulo" aria-describedby="basic-addon1">
     </div>
-    <div>
-      <input type="text" placeholder="Categoria" [(ngModel)]="topico.categoria" name="categoria" />
+    <br>
+
+
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Conteúdo</span>
+      </div>
+      <textarea class="form-control" aria-label="With textarea" class="form-control" placeholder="Conteudo"
+        [(ngModel)]="topico.conteudo" name="conteudo" aria-describedby="basic-addon1"></textarea>
     </div>
-    <div>
-      <input type="text" placeholder="Conteudo" [(ngModel)]="topico.conteudo" name="conteudo" />
+    <br>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Categoria</span>
+      </div>
+      <input type="text" class="form-control col-4 " placeholder="Categoria" [(ngModel)]="topico.categoria"
+        name="categoria" aria-describedby="basic-addon1">
+
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Status</span>
+      </div>
+      <input type="text" class="form-control col-4" placeholder="Status" [(ngModel)]="topico.status" name="status"
+        aria-describedby="basic-addon1">
+      <small>true-ATIVO <br>
+        false-DESATIVADO)</small>
     </div>
-    <div>
-      <input type="text" placeholder="Status" [(ngModel)]="topico.status" name="status" />
-    </div>
+
+
   </form>
-  <button (click)="editarTopico()" color="primary">
+  <button class="btn btn-primary" (click)="editarTopico()" color="primary" style="background-color: red;">
     Salvar
   </button>
 

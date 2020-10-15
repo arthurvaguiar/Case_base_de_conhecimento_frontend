@@ -1,0 +1,21 @@
+.home .title{
+  font-size: 1.5rem;
+  line-height: 1.2;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.2;
+  color: aliceblue;
+  font-style: normal;
+}
+
+.form-group{
+  text-align: left;
+  font-weight: 300;
+  color: aliceblue;
+}
+
+.table{
+  text-align: center;
+  font-weight: 300;
+  color: aliceblue;
+}

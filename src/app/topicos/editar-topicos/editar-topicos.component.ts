@@ -39,14 +39,16 @@ export class EditarTopicosComponent implements OnInit {
   }
 
 
-  editarTopico() {
+  editarTopico():  void{
     this.spinner.show();
-    ''    // this.topico = this.convertTopicoFormToTopico(this.formGroup.value);
+    // this.topico = this.convertTopicoFormToTopico(this.formGroup.value);
+    console.log(this.topico);
+
     this.topicosService.update(this.topico).subscribe(
       response => {
         this.spinner.hide();
         this.alertService.showAlertSucess(TERMOS.mensagem_sucesso_inserir_topico);
-        this.formGroup.reset();
+        //this.formGroup.reset();
       },
       erro => {
         this.spinner.hide();

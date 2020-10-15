@@ -1,33 +1,67 @@
-<br>
-<br>
-<h4>Trabalhando em um topico para a base</h4>
-<br>
-<br>
+<br><br><br><br>
+<div class="home p-3 mb-2  text-dark">
+  <div class="title">
+    Inserindo um novo tópico!
+  </div>
+</div>
+
 <form [formGroup]="formGroup" (ngSubmit)="inserirTopico(); $event.caseDefault()">
 
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label for="titulo">Titulo: </label>
     <input type="text" class="form-control col-4" formControlName="titulo">
-  </div>
+  </div> -->
 
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span for="titulo" class="input-group-text" id="basic-addon1">Titulo</span>
+    </div>
+    <input type="text" class="form-control" placeholder="Digite o titulo" formControlName="titulo" name="tiutlo"
+      aria-label="Titulo" [(ngModel)]="topico.titulo" aria-describedby="basic-addon1">
+  </div>
+  <br>
+
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text" for="conteudo" id="basic-addon1">Conteúdo</span>
+    </div>
+    <textarea formControlName="conteudo" class="form-control" aria-label="With textarea" class="form-control"
+      placeholder="Digite o conteudo" [(ngModel)]="topico.conteudo" name="conteudo"
+      aria-describedby="basic-addon1"></textarea>
+  </div>
+  <br>
+  <!--
   <div class="form-group">
     <label for="conteudo">Conteudo: </label>
     <input type="text" class="form-control col-4" formControlName="conteudo">
-  </div>
+  </div>-->
 
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span for="categoria" class="input-group-text" id="basic-addon1">Categoria</span>
+    </div>
+    <input type="text" class="form-control col-4 " placeholder="Digite a categoria" formControlName="categoria"
+      [(ngModel)]="topico.categoria" name="categoria" aria-describedby="basic-addon1">
+  </div>
+  <!--
   <div class="form-group">
     <label for="categoria">Categoria: </label>
     <input type="text" class="form-control col-4" formControlName="categoria">
+  </div>-->
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" for="status" id="basic-addon1">Status</span>
+    </div>
+    <input type="text" class="form-control col-4" placeholder="Digite true para ativo e false para invativo"
+      [(ngModel)]="topico.status" name="status" aria-describedby="basic-addon1">
+
+    <!--  <input type="text" class="form-control col-4" formControlName="status">
+    <small>TRUE-ATIVO / FALSE-DESATIVADO</small>
+   -->
   </div>
-
-  <div class="form-group">
-    <label for="status">Status(TRUE-ATIVO / FALSE-DESATIVADO): </label>
-    <input type="text" class="form-control col-4" formControlName="status">
-
-
-  </div>
-
-  <button type="submit" class="btn btn-primary" >Enviar tópico para a base</button>
+  <p></p>
+  <button type="submit" class="btn btn-primary" style="background-color: red;">Enviar tópico para a base</button>
 </form>
 
 <br>
